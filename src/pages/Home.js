@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Home = () => {
-  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const baseUrl = "https://kbc-game-indroyd-labs.vercel.app";
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 transition duration-500">
