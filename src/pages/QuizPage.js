@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { questions } from '../questions';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import ResultDisplay from '../components/ResultDisplay';
 import Question from '../components/Question';
 
@@ -25,20 +27,24 @@ const QuizPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4">Quiz</h1>
-      {currentQuestionIndex < questions.length ? (
-        <>
-          <Question
-            question={questions[currentQuestionIndex].question}
-            options={questions[currentQuestionIndex].options}
-            onAnswer={handleAnswer}
-          />
-          <ResultDisplay message={answerStatus} />
-        </>
-      ) : (
-        <p>{answerStatus}</p>
-      )}
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <Navbar />
+      <div className="flex flex-col items-center justify-center flex-grow">
+        <h1 className="text-3xl font-bold mb-4">Welcome, {playerName}</h1>
+        {currentQuestionIndex < questions.length ? (
+          <>
+            <Question
+              question={questions[currentQuestionIndex].question}
+              options={questions[currentQuestionIndex].options}
+              onAnswer={handleAnswer}
+            />
+          </>
+        ) : (
+          <ResultDisplay message={`Thanks for playing, ${playerName}!`} />
+        )}
+        {answerStatus && <ResultDisplay message={answerStatus} />}
+      </div>
+      <Footer />
     </div>
   );
 };

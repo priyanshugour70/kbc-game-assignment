@@ -8,7 +8,7 @@ const PlayerInput = ({ playerName, setPlayerName }) => {
         placeholder="Enter your name"
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}
-        className="p-2 border border-gray-300 rounded"
+        className="p-2 border border-gray-300 rounded w-full md:w-1/2"
       />
     </div>
   );

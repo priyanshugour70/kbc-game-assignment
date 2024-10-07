@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# KBC Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the KBC Game! This is a fun, interactive quiz game inspired by the popular Indian television show "Kaun Banega Crorepati". Players can enter their names and answer questions to test their knowledge.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [How to Run the Project](#how-to-run-the-project)
+- [Folder Structure](#folder-structure)
+- [Components Overview](#components-overview)
+- [Questions Data](#questions-data)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Interactive quiz with multiple-choice questions.
+- Players can enter their names and play the game.
+- Provides feedback on answers (correct/incorrect).
+- A clean and responsive UI designed using Tailwind CSS.
+- QR Code generation for easy access to the player input page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React.js**: JavaScript library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React Router**: Declarative routing for React.js.
+- **QRCode.react**: Library for generating QR codes.
+- **react-icons**: Library for including icons easily.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Instructions
 
-### `npm run build`
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/priyanshugour70/kbc-game-assignment.git
+   cd kbc-game
+   ```
+2. **Install Dependencies**
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Create an `.env` File**
+   In the root of the project, create a `.env` file and add the following line:
+   ```
+   REACT_APP_BASE_URL=http://localhost:3000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Start the Development Server**
+   ```bash
+   npm start
+   ```
+   This will start the development server, and you can access the app at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Run the Project
 
-### `npm run eject`
+1. **Access the Application**
+   Open your web browser and navigate to `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Play the Game**
+   - On the home screen, scan the QR code or navigate to the player input page.
+   - Enter your name and start the quiz by clicking on the "Start Quiz" button.
+   - Answer the questions presented to you, and receive feedback on your answers.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Folder Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+kbc-game/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Footer.js
+│   │   ├── Navbar.js
+│   │   ├── PlayerInput.js
+│   │   ├── Question.js
+│   │   └── ResultDisplay.js
+│   ├── questions.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── PlayerInputPage.js
+│   │   └── QuizPage.js
+│   ├── App.js
+│   ├── index.js
+│   └── tailwind.config.js
+├── .env
+├── package.json
+└── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Components Overview
 
-## Learn More
+- **Navbar**: Displays the title of the game and creator information.
+- **Footer**: Contains links to social profiles and contact information.
+- **PlayerInput**: Input component for entering the player's name.
+- **Question**: Renders the quiz question and multiple-choice options.
+- **ResultDisplay**: Displays messages regarding the player's performance.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Questions Data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The questions for the quiz are stored in `src/questions.js` in an array of objects. Each object contains the question, options, and the correct answer.
 
-### Code Splitting
+Example:
+```javascript
+export const questions = [
+  {
+    question: 'What is the capital of France?',
+    options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
+    answer: 'Paris',
+  },
+  ...
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions are welcome! If you would like to contribute to the project, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Create a new Pull Request.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
 
-### Advanced Configuration
+### Instructions for Use
+- Replace the placeholder `yourusername` in the clone command with your actual GitHub username.
+- Feel free to modify any section to better fit your project or personal preferences.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This `README.md` provides a clear overview of your project, its structure, features, and instructions to help users get started. If you have any additional features or sections you'd like to add, let me know!

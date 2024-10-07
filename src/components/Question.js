@@ -8,7 +8,7 @@ const Question = ({ question, options, onAnswer }) => {
         <button
           key={index}
           onClick={() => onAnswer(option)}
-          className="bg-blue-500 text-white p-2 rounded mb-2"
+          className="bg-blue-500 text-white p-2 rounded mb-2 w-full md:w-1/2"
         >
           {option}
         </button>
